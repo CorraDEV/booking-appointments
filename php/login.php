@@ -11,6 +11,6 @@ $riga = mysqli_query($connessione, $sql);
 
 if (mysqli_num_rows($riga)>0)
 {
-    header("location: index.php");
+    header("location: ../index.php");
 }
 ?>

@@ -9,6 +9,6 @@ $password = $connessione->real_escape_string($_POST['password']);
 $sql = "INSERT INTO utenti (EMAIL, PASSWORD) VALUES ('$email', '$password')";
 
 if($connessione->query($sql) === true){    
-    header("location: index.php");
+    header("location: ../index.php");
 }
 ?>

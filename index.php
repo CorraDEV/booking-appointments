@@ -13,7 +13,9 @@
 </head>
 
 <body class="p-3 mb-2 bg-info">
-    <div class="container d-flex flex-row gap-4">
+    <h1 class="text-center text-white mt-5">SISTEMA PRENOTAZIONI</h1>
+    
+    <div class="container d-flex flex-row gap-4 mt-5">
 
         <form class="d-flex flex-column gap-2 width-50 col mt-5" action="./php/registrazione.php" method="POST">
             <input type="email" placeholder="Email" name="email">

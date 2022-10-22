@@ -15,17 +15,13 @@
 <body class="p-3 mb-2 bg-info">
     <div class="container d-flex flex-row gap-4">
 
-        <form class="d-flex flex-column gap-2 width-50 col mt-5">
-            <input type="text" placeholder="Nome" name="nome">
-            <input type="text" placeholder="Cognome" name="cognome">
+        <form class="d-flex flex-column gap-2 width-50 col mt-5" action="" method="POST">
             <input type="email" placeholder="Email" name="email">
             <input type="password" placeholder="Password" name="password">
             <input type="submit" class="btn btn-primary" value="Crea Account">
         </form>
 
-        <form class="d-flex flex-column gap-2 width-50 col mt-5">
-            <input type="text" placeholder="Nome" name="nome">
-            <input type="text" placeholder="Cognome" name="cognome">
+        <form class="d-flex flex-column gap-2 width-50 col mt-5" action="" method="POST">
             <input type="email" placeholder="Email" name="email">
             <input type="password" placeholder="Password" name="password">
             <input type="submit" class="btn btn-primary" value="Login">

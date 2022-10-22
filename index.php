@@ -16,19 +16,19 @@
     <div class="container d-flex flex-row gap-4">
 
         <form class="d-flex flex-column gap-2 width-50 col mt-5">
-            <input type="text" placeholder="Nome" name="nome" />
-            <input type="text" placeholder="Cognome" name="cognome" />
-            <input type="email" placeholder="Email" name="email" />
-            <input type="password" placeholder="Password" name="password" />
-            <button type="submit" class="btn btn-primary">Crea Account</button>
+            <input type="text" placeholder="Nome" name="nome">
+            <input type="text" placeholder="Cognome" name="cognome">
+            <input type="email" placeholder="Email" name="email">
+            <input type="password" placeholder="Password" name="password">
+            <input type="submit" class="btn btn-primary" value="Crea Account">
         </form>
 
         <form class="d-flex flex-column gap-2 width-50 col mt-5">
-            <input type="text" placeholder="Nome" name="nome" />
-            <input type="text" placeholder="Cognome" name="cognome" />
-            <input type="email" placeholder="Email" name="email" />
-            <input type="password" placeholder="Password" name="password" />
-            <button type="submit" class="btn btn-primary">Login</button>
+            <input type="text" placeholder="Nome" name="nome">
+            <input type="text" placeholder="Cognome" name="cognome">
+            <input type="email" placeholder="Email" name="email">
+            <input type="password" placeholder="Password" name="password">
+            <input type="submit" class="btn btn-primary" value="Login">
         </form>
 
     </div>

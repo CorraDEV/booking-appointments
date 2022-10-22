@@ -13,7 +13,25 @@
 </head>
 
 <body>
-    <h1>HELLO WORLD!!!</h1>
+    <div class="container d-flex flex-row gap-4">
+
+        <form class="d-flex flex-column gap-2 width-50 col">
+            <input type="text" placeholder="Nome" name="nome" />
+            <input type="text" placeholder="Cognome" name="cognome" />
+            <input type="email" placeholder="Email" name="email" />
+            <input type="password" placeholder="Password" name="password" />
+            <button type="submit" class="btn btn-primary">Crea Account</button>
+        </form>
+
+        <form class="d-flex flex-column gap-2 width-50 col">
+            <input type="text" placeholder="Nome" name="nome" />
+            <input type="text" placeholder="Cognome" name="cognome" />
+            <input type="email" placeholder="Email" name="email" />
+            <input type="password" placeholder="Password" name="password" />
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+    </div>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

@@ -11,15 +11,15 @@
 </head>
 
 <body class="p-3 mb-2 bg-info">
-    <h1 class="text-center text-white mt-5">LOGIN</h1>
+    <h1 class="text-center text-white mt-5">REGISTRAZIONE</h1>
     
     <div class="d-flex w-100 justify-content-center">
         
         <form class="d-flex flex-column gap-2 w-25 mt-5 align-items-center" action="./php/login.php" method="POST">
             <input type="email" class="w-100 form-control shadow-none" placeholder="Email" name="email">
             <input type="password" class="w-100 form-control shadow-none" placeholder="Password" name="password">
-            <input type="submit" class="btn btn-primary w-100" value="Login">
-            <span class="align-self-end">Se non ti sei ancora registrato <a href="./registrazione.php">clicca qui</a></span>
+            <input type="submit" class="btn btn-primary w-100" value="Crea account">
+            <span class="align-self-end">Se hai già un'account <a href="./index.php">clicca qui</a></span>
         </form>
 
     </div>

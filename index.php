@@ -8,6 +8,12 @@
     <title>Prenotazioni</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script>
+        
+        if (window.history.replaceState) //evita di ricevere messaggio errore dopo refresh pagina
+            window.history.replaceState(null, null, window.location.href);
+        
+    </script>
 </head>
 
 <body class="p-3 mb-2 bg-info">
@@ -15,11 +21,14 @@
     
     <div class="d-flex w-100 justify-content-center">
         
-        <form class="d-flex flex-column gap-2 w-25 mt-5 align-items-center" action="./php/login.php" method="POST">
+        <form class="d-flex flex-column gap-2 w-25 mt-5 align-items-center" action="" method="POST">
             <input type="email" class="w-100 form-control shadow-none" placeholder="Email" name="email">
             <input type="password" class="w-100 form-control shadow-none" placeholder="Password" name="password">
             <input type="submit" class="btn btn-primary w-100" value="Login">
             <span class="align-self-end">Se non ti sei ancora registrato <a href="./registrazione.php">clicca qui</a></span>
+            <?php 
+                include './php/controllo_login.php';
+            ?>
         </form>
 
     </div>

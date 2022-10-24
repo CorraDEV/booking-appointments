@@ -24,7 +24,7 @@
         <form class="d-flex flex-column gap-2 w-25 mt-5 align-items-center" action="" method="POST">
             <input type="email" class="w-100 form-control shadow-none" placeholder="Email" name="email">
             <input type="password" class="w-100 form-control shadow-none" placeholder="Password" name="password">
-            <input type="submit" class="btn btn-primary w-100" value="Login">
+            <input type="submit" class="btn btn-primary w-100" value="Login" name="login">
             <span class="align-self-end">Se non ti sei ancora registrato <a href="./registrazione.php">clicca qui</a></span>
             <?php 
                 include './php/controllo_login.php';

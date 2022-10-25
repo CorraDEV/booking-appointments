@@ -28,7 +28,7 @@
             {
                 $sql = "INSERT INTO utenti (NOME, COGNOME, EMAIL, PASSWORD) VALUES ('$nome', '$cognome', '$email', '$password')";
                 $riga = mysqli_query($connessione, $sql);    
-                header("location: index.php");
+                header("Location: http://localhost:8080/booking-appointments/login.php");
             }
         }
     }

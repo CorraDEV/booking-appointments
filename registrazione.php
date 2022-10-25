@@ -27,9 +27,9 @@
             <input type = "email" class = "w-100 form-control shadow-none" placeholder = "Email" name = "email">
             <input type = "password" class = "w-100 form-control shadow-none" placeholder = "Password" name = "password">
             <input type = "submit" class = "btn btn-primary w-100" value="Crea account" name = "sign_up">
-            <span class = "align-self-end">Se hai già un'account <a href="./index.php">clicca qui</a></span>
+            <span class = "align-self-end">Se hai già un'account <a href="login.php">clicca qui</a></span>
             <?php 
-                include './php/controllo_registrazione.php';
+                include 'php/controllo_registrazione.php';
             ?>
         </form>
 

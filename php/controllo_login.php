@@ -7,17 +7,8 @@ if(isset($_POST['login'])) //controllo tasto "submit" premuto//
     $email = $_POST['email']; 
     $password = $_POST['password'];
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL))
-        print('mail non valida');
-
-    if($email === "" && $password === "")
-        print('<br><p style = "color:red;"><b>entrambi i campi non sono compilati</b></p>');    
-        
-    else if($email === "" && $password != "")
-        print('<br><p style = "color:red;"><b>campo email non compilato</b></p>');    
-
-    else if($email != "" && $password === "")
-        print('<br><p style = "color:red;"><b>campo password non compilato</b></p>');
+    if($email === "" || $password === "")
+        print('<br><p style = "color:red;"><b>Hai lasciato uno o più campi vuoti</b></p>');    
     
     else
     {

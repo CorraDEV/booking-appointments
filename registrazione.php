@@ -22,6 +22,8 @@
     <div class = "d-flex w-100 justify-content-center">
         
         <form class = "d-flex flex-column gap-2 w-25 mt-5 align-items-center" action = "" method = "POST">
+            <input type = "text" class = "w-100 form-control shadow-none" placeholder = "Nome" name = "nome">
+            <input type = "text" class = "w-100 form-control shadow-none" placeholder = "Cognome" name = "cognome">
             <input type = "email" class = "w-100 form-control shadow-none" placeholder = "Email" name = "email">
             <input type = "password" class = "w-100 form-control shadow-none" placeholder = "Password" name = "password">
             <input type = "submit" class = "btn btn-primary w-100" value="Crea account" name = "sign_up">

@@ -4,15 +4,18 @@
     {
         require_once('config.php'); 
 
+        $nome = $_POST['nome'];
+        $cognome = $_POST['cognome'];
         $email = $_POST['email']; 
         $password = $_POST['password'];
 
-        if($email === "" && $password === "") //controllo campi vuoti//
+        if($nome === "" || $cognome === "" || $email === "" || $password === "") //controllo campi vuoti//
             print('<br><p style = "color: red;"><b>Hai lasciato uno o più campi vuoti</b></p>');
         
-        else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+        
+        else if(!filter_var($email, FILTER_VALIDATE_EMAIL)) //validazione email
             print('<br><p style = "color: red;"><b>Email non valida</b></p>');        
-
+        
         else
         {
             $sql = "SELECT * FROM utenti WHERE utenti.email = '$email'";
@@ -21,11 +24,11 @@
             if (mysqli_num_rows($riga) > 0) //controllo email già utilizzata// 
                 print('<br><p style = "color:red;"><b>Questa email è già stata utilizza</b></p>');
             
-            else
+            else //inserimento dati nel database
             {
-                $sql = "INSERT INTO utenti (EMAIL, PASSWORD) VALUES ('$email', '$password')";
+                $sql = "INSERT INTO utenti (NOME, COGNOME, EMAIL, PASSWORD) VALUES ('$nome', '$cognome', '$email', '$password')";
                 $riga = mysqli_query($connessione, $sql);    
-                header("location: ./index.php");
+                header("location: index.php");
             }
         }
     }

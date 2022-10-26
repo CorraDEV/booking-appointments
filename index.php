@@ -10,25 +10,42 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">  
     
     <style>
-       
+        /*stile dei link presenti nella barra di navigazione*/
+        
+        #logout a
+        {
+            display: none;
+            padding: 0.75em;
+        }
+        
         #login a,
         #registrazione a,
         #prenotazione a
+        {            
+            display: inline-block;
+            padding: 1em;
+            position: relative;
+        }    
+        
+        #login:hover,
+        #registrazione:hover,
+        #prenotazione:hover
         {
-            padding: 1.1em;
+            background-color: red;
+            cursor: pointer; 
         }
         
-        #login,
-        #registrazione,
-        #prenotazione
-        {
-            padding: 1em 0;
+        #login:hover+#logout a        
+        {  
+            display: inline-block;
+            position: absolute;
+            background-color: rgb(13, 110, 253);
         }
 
-        #login a:hover,
-        #registrazione a:hover,
-        #prenotazione a:hover
+        #logout a:hover
         {
+            display: inline-block;
+            position: absolute;
             background-color: red;
         }
     </style>
@@ -44,7 +61,15 @@
 <body class="bg-info">
     <nav class="d-flex bg-primary">        
         <ul class="d-flex list-unstyled ms-auto mt-auto mb-auto">
-            <li id="login"><a style="color: white; font-weight: bold" class="text-decoration-none" href="login.php">Login</a></li>
+            <?php 
+                session_start();
+                if(isset($_SESSION['email'])){                    
+                    print('<li style="color: white; font-weight: bold"><ul class="list-unstyled"><li id="login"><a style="color: white; font-weight: bold" class="text-decoration-none">');                    
+                    print($_SESSION['email']);
+                    print('</a></li><li id="logout"><a style="color: white; font-weight: bold" class="text-decoration-none" href="php/logout.php">Logout</a></ul></li>');
+                }
+                else print('<li id="login"><a style="color: white; font-weight: bold" class="text-decoration-none" href="login.php">Login</a></li>');
+            ?>            
             <li id="registrazione"><a style="color: white; font-weight: bold" class="text-decoration-none" href="registrazione.php">Registrati</a></li>
             <li id="prenotazione"><a style="color: white; font-weight: bold" class="text-decoration-none"  href="prenotazione.php">Prenota ora</a></li>
         </ul>

@@ -59,7 +59,7 @@
 </head>
 
 <body class="bg-info">
-    <nav class="d-flex bg-primary">        
+    <nav style="position: relative;" class="d-flex bg-primary">        
         <ul class="d-flex list-unstyled ms-auto mt-auto mb-auto">
             <?php 
                 session_start();
@@ -71,9 +71,19 @@
                 else print('<li id="login"><a style="color: white; font-weight: bold" class="text-decoration-none" href="login.php">Login</a></li>');
             ?>            
             <li id="registrazione"><a style="color: white; font-weight: bold" class="text-decoration-none" href="registrazione.php">Registrati</a></li>
-            <li id="prenotazione"><a style="color: white; font-weight: bold" class="text-decoration-none"  href="prenotazione.php">Prenota ora</a></li>
+            <li id="prenotazione">
+                <a style="color: white; font-weight: bold" class="text-decoration-none" href="prenotazione.php">Prenota ora</a>
+            </li>
         </ul>
     </nav>
+    <?php
+        if(isset($_SESSION['error_message'])){
+            print('<span style="position: absolute; right: 1em; color: red; font-weight: bold">');
+            print($_SESSION['error_message']);
+            print('</span>');
+            unset($_SESSION['error_message']);
+        }
+    ?>
     <h1 class="text-center text-white mt-5">HOMEPAGE</h1>
 
     <!-- Bootstrap -->

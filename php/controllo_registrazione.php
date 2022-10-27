@@ -10,11 +10,11 @@
         $password = $_POST['password'];
 
         if($nome === "" || $cognome === "" || $email === "" || $password === "") //controllo campi vuoti//
-            print('<br><p style = "color: red;"><b>Hai lasciato uno o più campi vuoti</b></p>');
+            print('<br><p style = "color: red; font-weight: bold"><b>Hai lasciato uno o più campi vuoti</b></p>');
         
         
         else if(!filter_var($email, FILTER_VALIDATE_EMAIL)) //validazione email
-            print('<br><p style = "color: red;"><b>Email non valida</b></p>');        
+            print('<br><p style = "color: red; font-weight: bold"><b>Email non valida</b></p>');        
         
         else
         {
@@ -22,7 +22,7 @@
             $riga = mysqli_query($connessione, $sql);    
             
             if (mysqli_num_rows($riga) > 0) //controllo email già utilizzata// 
-                print('<br><p style = "color:red;"><b>Questa email è già stata utilizza</b></p>');
+                print('<br><p style = "color:red; font-weight: bold"><b>Questa email è già stata utilizza</b></p>');
             
             else //inserimento dati nel database
             {

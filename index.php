@@ -32,20 +32,30 @@
         
     /*****************/
 
-    /*stile dei link presenti nella barra di navigazione*/
-        #logout a
+    /*stile dei link presenti nella barra di navigazione*/   
+        #opzioni_profilo
         {
+            position: absolute;
+            top: 3.5em;
             display: none;
-            padding: 0.75em;
+            flex-direction: column;
+            background-color: rgb(13, 110, 253);
         }
-        
+
+        #logout a,
+        #modifica_profilo a
+        {
+            display: inline-block;
+            width: 100%;
+            padding: 1em;            
+        }
+
         #login a,
         #registrazione a,
         #prenotazione a
         {            
             display: inline-block;
             padding: 1em;
-            position: relative;
         }    
         
         #login:hover,
@@ -55,19 +65,17 @@
             background-color: red;
             cursor: pointer; 
         }
-        
-        #login:hover+#logout a        
-        {  
-            display: inline-block;
-            position: absolute;
-            background-color: rgb(13, 110, 253);
+
+        #logout:hover,
+        #modifica_profilo:hover
+        {
+            background-color: red;
         }
 
-        #logout a:hover
+        #login:hover ~ #opzioni_profilo,
+        #opzioni_profilo:hover
         {
-            display: inline-block;
-            position: absolute;
-            background-color: red;
+            display: flex;
         }
     </style>
 
@@ -80,14 +88,14 @@
 </head>
 
 <body class="bg-info">
-    <nav style="position: relative;" class="d-flex bg-primary">        
+    <nav id="barra_di_navigazione" style="position: relative;" class="d-flex bg-primary">        
         <ul class="d-flex list-unstyled ms-auto mt-auto mb-auto">
             <?php 
                 session_start();
                 if(isset($_SESSION['email'])){                    
-                    print('<li style="color: white; font-weight: bold"><ul class="list-unstyled"><li id="login"><a style="color: white; font-weight: bold" class="text-decoration-none">');                    
+                    print('<li id="login" style="color: white; font-weight: bold"><a style="color: white; font-weight: bold" class="text-decoration-none">');                    
                     print($_SESSION['email']);
-                    print('</a></li><li id="logout"><a style="color: white; font-weight: bold" class="text-decoration-none" href="php/logout.php">Logout</a></ul></li>');
+                    print('</a></li><div id="opzioni_profilo"><div id="logout"><a style="color: white; font-weight: bold" class="text-decoration-none" href="php/logout.php">Logout</a></div><div id="modifica_profilo"><a style="color: white; font-weight: bold" class="text-decoration-none" href="modifica_profilo.php">Modifica</a></div></div>');
                 }
                 else print('<li id="login"><a style="color: white; font-weight: bold" class="text-decoration-none" href="login.php">Login</a></li>');
             ?>            

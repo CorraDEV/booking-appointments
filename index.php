@@ -10,12 +10,12 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">  
     <style>
-    /*tutto lo stile sottostante permette al footer di rimanere in basso nella pagina*/ 
+    /*tutto lo stile sottostante permette al footer di rimanere in basso nella pagina*/     
         html 
         {
             height: 100%;
         }
-
+        
         body
         {
             display: flex;
@@ -29,6 +29,7 @@
             padding: 1em 0;
             margin-top: auto;
         }
+        
     /*****************/
 
     /*stile dei link presenti nella barra di navigazione*/
@@ -98,7 +99,7 @@
     </nav>
     <?php
         if(isset($_SESSION['error_message'])){
-            print('<span style="position: absolute; right: 1em; color: red; font-weight: bold">');
+            print('<span style="position: absolute; right: 1em; top: 4em; color: red; font-weight: bold">');
             print($_SESSION['error_message']);
             print('</span>');
             unset($_SESSION['error_message']);

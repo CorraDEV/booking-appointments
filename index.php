@@ -6,12 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <link rel="icon" href="img/booking.png">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">  
-    
     <style>
-        /*stile dei link presenti nella barra di navigazione*/
+    /*tutto lo stile sottostante permette al footer di rimanere in basso nella pagina*/ 
+        html 
+        {
+            height: 100%;
+        }
+
+        body
+        {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
         
+        footer
+        {
+            width: 100%;
+            padding: 1em 0;
+            margin-top: auto;
+        }
+    /*****************/
+
+    /*stile dei link presenti nella barra di navigazione*/
         #logout a
         {
             display: none;
@@ -84,8 +104,10 @@
             unset($_SESSION['error_message']);
         }
     ?>
-    <h1 class="text-center text-white mt-5">HOMEPAGE</h1>
-
+    <h1 class="text-center text-white mt-5 mb-5">BOOKING SYSTEM</h1>
+    <img src="img/immagine_homepage.jpg" style="display: block; width: 40em; height: auto; margin: 0 auto" alt="impossibile da caricare">
+    <h2 class="text-center text-white mt-5">Prenotare non è mai stato così facile</h3>
+    <footer class="d-flex gap-4 bg-primary text-white"><span style="margin-left: 1em;">&copy;zZMarza</span><span>&copy;omarjab01</span></footer>
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>

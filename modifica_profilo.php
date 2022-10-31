@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang = "en">
 
@@ -23,10 +26,15 @@
     <div class = "d-flex w-100 justify-content-center">
         
         <form class = "d-flex flex-column gap-2 w-25 mt-5 align-items-center" action = "" method = "POST">
-            <input type = "text" class = "w-100 form-control shadow-none" placeholder = "Nome" name = "nome">
-            <input type = "text" class = "w-100 form-control shadow-none" placeholder = "Cognome" name = "cognome">            
-            <input type = "password" class = "w-100 form-control shadow-none" placeholder = "Password" name = "password">
+            <input type = "text" class = "w-100 form-control shadow-none" placeholder = "Email" name = "email"
+            value="<?php print($_SESSION['email'])?>">
+            <input type = "text" class = "w-100 form-control shadow-none" placeholder = "Nome" name = "nome"
+            value="<?php print($_SESSION['nome'])?>">
+            <input type = "text" class = "w-100 form-control shadow-none" placeholder = "Cognome" name = "cognome" value="<?php print($_SESSION['cognome'])?>">            
+            <input type = "password" class = "w-100 form-control shadow-none" placeholder = "Password" name = "password"
+            value="<?php print($_SESSION['password'])?>">
             <input type = "submit" class = "btn btn-primary w-100" value="Salva modifiche" name = "salva_modifiche">
+            <span class="align-self-end"><a href="index.php">torna in homepage</a></span>
             <?php 
                 include 'php/controllo_modifica_profilo.php';
             ?>

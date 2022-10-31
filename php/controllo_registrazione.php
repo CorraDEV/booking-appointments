@@ -22,7 +22,7 @@
             $riga = mysqli_query($connessione, $sql);    
             
             if (mysqli_num_rows($riga) > 0) //controllo email già utilizzata// 
-                print('<br><p style = "color:red; font-weight: bold"><b>Questa email è già stata utilizza</b></p>');
+                print('<br><p style = "color:red; font-weight: bold"><b>Questa email è già stata utilizzata</b></p>');
             
             else //inserimento dati nel database
             {

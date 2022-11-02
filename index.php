@@ -43,7 +43,7 @@
         }
 
         #logout a,
-        #modifica_profilo a
+        #impostazioni a
         {
             display: inline-block;
             width: 100%;
@@ -67,7 +67,7 @@
         }
 
         #logout:hover,
-        #modifica_profilo:hover
+        #impostazioni:hover
         {
             background-color: red;
         }
@@ -95,7 +95,7 @@
                 if(isset($_SESSION['email'])){                    
                     print('<li id="login" style="color: white; font-weight: bold"><a style="color: white; font-weight: bold" class="text-decoration-none">');                    
                     print($_SESSION['email']);
-                    print('</a></li><div id="opzioni_profilo"><div id="logout"><a style="color: white; font-weight: bold" class="text-decoration-none" href="php/logout.php">Logout</a></div><div id="modifica_profilo"><a style="color: white; font-weight: bold" class="text-decoration-none" href="modifica_profilo.php">Modifica</a></div></div>');
+                    print('</a></li><div id="opzioni_profilo"><div id="impostazioni"><a style="color: white; font-weight: bold" class="text-decoration-none" href="impostazioni.php">Impostazioni</a></div><div id="logout"><a style="color: white; font-weight: bold" class="text-decoration-none" href="php/logout.php">Logout</a></div></div>');
                 }
                 else print('<li id="login"><a style="color: white; font-weight: bold" class="text-decoration-none" href="login.php">Login</a></li>');
             ?>            

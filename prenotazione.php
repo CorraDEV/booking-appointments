@@ -35,20 +35,27 @@
         
         <form class="d-flex flex-column gap-2 w-25 mt-5 align-items-center" action="" method="POST">
             
-            <label for="data_appuntamento" class="w-100 text-left"><b>Data appuntamento:</b></label>
+            <label for="data_appuntamento" class="w-100 text-left"><b>Data e ora appuntamento:</b></label>
             <select class = "w-100 form-select shadow-none" name="data_appuntamento">
-                <option value="2022-12-01">2022-12-01</option>
-                <option value="2022-12-02">2022-12-02</option>
-                <option value="2022-12-03">2022-12-03</option>
-                <option value="2022-12-04">2022-12-04</option>
+            <?php
+                require_once("php/config.php");
+                $sql = "SELECT * FROM appuntamenti_disponibili";                
+                $risultato = mysqli_query($connessione, $sql);
+    
+                if (mysqli_num_rows($risultato) > 0)
+                {
+                    while($riga = mysqli_fetch_assoc($risultato))
+                    {
+                        print('"<option value = "');
+                        print($riga['DATA_DISPONIBILE']);
+                        print('">');
+                        print($riga['DATA_DISPONIBILE']);
+                        print("</option>");
+                    }
+                }
+                else print('<br><p style = "color:red; font-weight: bold"><b>Non è possibile scegliere una data di prenotazione</b></p>');                
+            ?>
             </select>          
-            <label for="ora_appuntamento" class="w-100 mt-2 text-left"><b>Ora appuntamento:</b></label>
-            <select class = "w-100 form-select shadow-none" name="ora_appuntamento">
-                <option value="14:00:00">14:00:00</option>
-                <option value="15:00:00">15:00:00</option>
-                <option value="16:00:00">16:00:00</option>
-                <option value="17:00:00">17:00:00</option>
-            </select>
             <input type = "submit" class = "btn btn-primary w-100" value="Prenota" name = "prenota">
             <span class = "align-self-end"><a href="index.php">Torna in homepage</a></span>
             <?php 

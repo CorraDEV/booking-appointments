@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['email']))
     {
-        $_SESSION['error_message'] = 'Per accedere a questa pagina devi prima aver effettuato il login';
+        $_SESSION['error_message'] = 'Per poter prenotare devi prima aver effettuato il login';
         header('Location: http://localhost:8080/booking-appointments/');
     }
 ?>

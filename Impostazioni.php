@@ -15,6 +15,34 @@
             window.history.replaceState(null, null, window.location.href);
     
     </script>
+    <style>
+        /*stile scrollbar*/ 
+        
+        ::-webkit-scrollbar
+        {
+            width: 1vw;
+            border-radius: 1vw;
+        }
+
+        ::-webkit-scrollbar-thumb
+        {
+            background-color: rgb(37, 36, 36);
+            height: 1vw;
+            width: 2vw;
+            border: .2vw solid rgb(172, 172, 172);
+            border-radius: 1vw;
+        }
+
+        ::-webkit-scrollbar-thumb:hover
+        {
+            background-color: rgb(87, 82, 82);
+        }
+
+        ::-webkit-scrollbar-track
+        {
+            background-color: grey;
+        }
+    </style>
 </head>
 
 <body class = "bg-info pb-5">

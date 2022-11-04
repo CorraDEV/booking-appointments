@@ -33,6 +33,8 @@
     /*****************/
 
     /*stile dei link presenti nella barra di navigazione*/   
+    
+    /*submenu profilo*/
         #opzioni_profilo
         {
             position: absolute;
@@ -77,6 +79,42 @@
         {
             display: flex;
         }
+    /**********/
+    
+    /*submenu recensioni*/
+        #recensioni:hover,
+        #scrivi_recensione:hover,
+        #vedi_recensioni:hover
+        {
+            background-color: red;
+            cursor: pointer;
+        }
+    
+        #recensioni a,
+        #scrivi_recensione a,
+        #vedi_recensioni a
+        {
+            display: inline-block;
+            padding: 1em;
+        }
+        
+        #opzioni_recensioni
+        {
+            position: absolute;
+            top: 3.5em;
+            right: 0;
+            display: none;
+            flex-direction: column;
+            background-color: rgb(13, 110, 253);
+            z-index: 1;
+        }
+
+        #recensioni:hover ~ #opzioni_recensioni,
+        #opzioni_recensioni:hover
+        {
+            display: flex;
+        }
+    /*******************/
     </style>
 
     <script>
@@ -100,9 +138,12 @@
                 else print('<li id="login"><a style="color: white; font-weight: bold" class="text-decoration-none" href="login.php">Login</a></li>');
             ?>            
             <li id="registrazione"><a style="color: white; font-weight: bold" class="text-decoration-none" href="registrazione.php">Registrati</a></li>
-            <li id="prenotazione">
-                <a style="color: white; font-weight: bold" class="text-decoration-none" href="prenotazione.php">Prenota ora</a>
-            </li>
+            <li id="prenotazione"><a style="color: white; font-weight: bold" class="text-decoration-none" href="prenotazione.php">Prenota ora</a></li>
+            <li id="recensioni"><a style="color: white; font-weight: bold" class="text-decoration-none">Recensioni</a></li>
+            <div id="opzioni_recensioni">
+                <div id="vedi_recensioni"><a style="color: white; font-weight: bold" class="text-decoration-none" href="vedi_recensioni.php">Vedi recensioni</a></div>
+                <div id="scrivi_recensione"><a style="color: white; font-weight: bold" class="text-decoration-none" href="scrivi_recensione.php">Scrivi recensione</a></div>
+            </div>                        
         </ul>
     </nav>
     <?php

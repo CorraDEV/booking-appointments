@@ -59,7 +59,6 @@
     <div class="text-center mt-5 mb-4"><a style="font-size: 1.25em;" href="index.php">Torna in homepage</a></div>
 
       <?php
-        session_start();
         $email_recensione = $_SESSION['email'];
         $sql = "SELECT * FROM recensioni WHERE EMAIL = '$email_recensione'";
         require_once('php/config.php');

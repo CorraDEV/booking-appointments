@@ -36,7 +36,7 @@
             <input type = "password" class = "w-100 form-control shadow-none" placeholder = "Password" name = "password"
             value="<?php print($_SESSION['password'])?>">
             <input type = "submit" class = "btn btn-primary w-100" value="Salva modifiche" name = "salva_modifiche">
-            <span class="align-self-end"><a href="index.php">torna in homepage</a></span>
+            <span class="align-self-end"><a href="index.php">Torna in homepage</a></span>
             <?php 
                 include 'php/controllo_modifica_profilo.php';
             ?>

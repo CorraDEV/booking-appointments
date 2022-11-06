@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['email']))
+    {
+        header('Location: http://localhost:8080/booking-appointments/');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang = "en">
 
@@ -47,8 +55,15 @@
 
 <body class = "bg-info pb-5">
     <h1 class = "text-center text-white mt-5">IMPOSTAZIONI</h1>
-    
+
     <div class="d-flex align-items-center flex-column gap-5 mt-5">  
+        
+        <a style="font-size: 1.25em;" href="index.php">Torna in homepage</a>
+
+        <?php
+            include('php/elimina_profilo.php');
+        ?>
+        
         <div class="d-flex justify-content-center w-25 bg-dark p-2" style="border-radius: 4em;">
             <div class="d-flex align-items-center flex-column gap-3 bg-warning pt-3 pb-3" style="border-radius: 4em;">
                 <p class="w-75">cliccando su "Modifica profilo" è possibile vedere ed eventualmente cambiare le credenziali relative al tuo account con il quale ti sei loggato</p>
@@ -58,24 +73,25 @@
        
         <div class="d-flex justify-content-center w-25 bg-dark p-2" style="border-radius: 4em;">
             <div class="d-flex align-items-center flex-column gap-3 bg-warning pt-3 pb-3" style="border-radius: 4em;">
-                <p class="w-75">cliccando su "Prenotazioni" è possibile vedere ed eventualmente annullare le prenotazioni da te effettuate</p>
-                <a href="annulla_prenotazioni.php"><button type="button" class="btn btn-light">Prenotazioni</button></a>
+                <p class="w-75">cliccando su "Prenotazioni" è possibile vedere le prenotazioni da te effettuate</p>
+                <a href="vedi_prenotazioni.php"><button type="button" class="btn btn-light">Prenotazioni</button></a>
             </div>
         </div>    
 
         <div class="d-flex justify-content-center w-25 bg-dark p-2" style="border-radius: 4em;">
             <div class="d-flex align-items-center flex-column gap-3 bg-warning pt-3 pb-3" style="border-radius: 4em;">            
-                <p class="w-75">cliccando su "Recensioni" è possibile vedere ed eventualmente annullare le recensioni da te effettuate</p>
-                <a href="annulla_recensioni.php"><button type="button" class="btn btn-light">Recensioni</button></a>
+                <p class="w-75">cliccando su "Recensioni" è possibile vedere le recensioni da te effettuate</p>
+                <a href="vedi_recensioni_effettuate.php"><button type="button" class="btn btn-light">Recensioni</button></a>
             </div>
         </div>
 
-        <div class="d-flex justify-content-center w-25 bg-dark p-2" style="border-radius: 4em;">
+        <form class="d-flex justify-content-center w-25 bg-dark p-2" style="border-radius: 4em;" method="POST" action="">
             <div class="d-flex align-items-center flex-column gap-3 bg-warning pt-3 pb-3" style="border-radius: 4em;">            
                 <p class="w-75">cliccando su "Elimina profilo" è possibile cancellare il proprio account, tuttavia le recensioni e le prenotazioni effettuate non verranno cancellate</p>
-                <a href="php/elimina_profilo.php"><button type="button" class="btn btn-light">Elimina profilo</button></a>
+                <input type="submit" class="btn btn-light" name="elimina_profilo" value="Elimina profilo">
             </div>
-        </div>
+        </form>
+        
     </div>
 
     <!-- Bootstrap -->

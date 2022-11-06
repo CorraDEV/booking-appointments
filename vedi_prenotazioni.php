@@ -59,7 +59,8 @@
     <div class="text-center mt-5 mb-4"><a style="font-size: 1.25em;" href="index.php">Torna in homepage</a></div>
 
     <?php
-        $sql = "SELECT * FROM prenotazioni";
+        $email = $_SESSION['email'];
+        $sql = "SELECT * FROM prenotazioni WHERE EMAIL = '$email'";
         require_once('php/config.php');
         $risultato = mysqli_query($connessione, $sql);
         
